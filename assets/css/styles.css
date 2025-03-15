@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+    --primary: #0E131A;
+    --secondary: #53db5a;
+    --accent: #FFF3DB;
+    --background: #0A3A40;
+    --foreground: #F5F5F5;
+}
+
+@theme {
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-accent: var(--accent);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: InterVariable, sans-serif;
+}
+
+body {
+    @apply bg-primary text-foreground min-h-[200vh];
+}
+
+.auto-pad {
+    @apply px-4 sm:px-8 md:px-16 lg:px-32;
+}
+
+.logo-color {
+    path {
+        @apply fill-foreground;
+    }
+}
