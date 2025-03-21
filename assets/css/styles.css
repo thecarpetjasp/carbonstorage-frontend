@@ -3,7 +3,7 @@
 :root {
     --primary: #0E131A;
     --secondary: #53db5a;
-    --accent: #FFF3DB;
+    --accent: #006eff;
     --background: #0A3A40;
     --foreground: #F5F5F5;
 }
@@ -21,6 +21,10 @@ body {
     @apply bg-primary text-foreground min-h-[200vh];
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .auto-pad {
     @apply px-4 sm:px-8 md:px-16 lg:px-32;
 }
@@ -28,5 +32,47 @@ body {
 .logo-color {
     path {
         @apply fill-foreground;
+    }
+}
+
+.menu-open {
+    .line-1 {
+        transform: translateY(6px) rotate(45deg) !important;
+    }
+    .line-2 {
+        opacity: 0 !important;
+    }
+    .line-3 {
+        transform: translateY(-6px) rotate(-45deg) !important;
+    }
+}
+
+.menu-close {
+    .line-1 {
+        transform: translateY(0) rotate(0);
+    }
+    .line-2 {
+        opacity: 100;
+    }
+    .line-3 {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.menu-active {
+    opacity: 100;
+    pointer-events: auto;
+    ul {
+        transform: translateY(2rem);
+    }
+}
+
+.open-dropdown {
+    .dropdown-list {
+        grid-template-rows: 1fr;
+        padding-top: 12px;
+    }
+    .dropdown-icon {
+        rotate: 180deg;
     }
 }
